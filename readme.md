@@ -65,7 +65,7 @@ npm start
 1. Install discord-updater package
 
 ```sh
-npm install discord-updater -g
+npm i @p0xz/discord-updater -g
 ```
 
 2. Run discord-updater using CLI
