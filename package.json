@@ -1,0 +1,26 @@
+{
+  "name": "@p0xz/discord-updater",
+  "version": "1.0.1",
+  "main": "index.js",
+  "type": "module",
+  "bin": {
+    "discord-update": "index.js"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "discord",
+    "updater",
+    "update",
+    "linux",
+    "ubuntu",
+    "debian"
+  ],
+  "author": "p0xz",
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "AGPL-3.0",
+  "description": "Lightweight discord updater for linux"
+}
