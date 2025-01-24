@@ -74,6 +74,34 @@ npm i @p0xz/discord-updater -g
 discord-update
 ```
 
+## AutoStart
+
+Using following example of `.desktop` file you can configure your discord to update on every startup
+
+```ini
+[Desktop Entry]
+Name=Discord Updater
+Comment=This command runs update sequence of discord on every startup
+Type=Application
+Exec=discord-update
+Keywords=discord;update
+Categories=Utility;
+```
+
+Create a file in `/etc/xdg/autostart` using
+
+```sh
+echo "[Desktop Entry]
+Name=Discord Updater
+Comment=This command runs update sequence of discord on every startup
+Type=Application
+Exec=discord-update
+Keywords=discord;update
+Categories=Utility;" > /etc/xdg/autostart/discord-update.desktop
+```
+
+This will create your `.desktop` file with already containing necessary content
+
 ## License
 
 Copyright © 2025 [discord-updater](https://github.com/p0xz/Discord-Updater)
