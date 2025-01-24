@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { exec } from 'child_process';
+import { exec, execSync } from 'child_process';
 import { fileURLToPath } from 'url';
 import { loadingAnimation } from './utils.js';
 import fs from 'fs/promises'
@@ -55,6 +55,14 @@ async function get_version(platform = "linux", format = "deb") {
     const url = await get_version(platform, format);
 
     const version = url.match(/discord-([\d.]+)(?<!\.)/)[1];
+
+    const current_version = execSync("dpkg-query -f '${Version}' -W discord").toString();
+
+    if (current_version === version) {
+        waiting.stop();
+        console.log(`Discord ${version} is already installed!`);
+        return;
+    }
 
     waiting.pipe(`Downloading discord (${version})`);
 
